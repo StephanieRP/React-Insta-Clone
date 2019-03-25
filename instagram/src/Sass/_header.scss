@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+  border-bottom: gray solid 0.7px;
+  &-left {
+    display: flex;
+    i {
+      font-size: 3rem;
+      padding-right: 1rem;
+    }
+    h1 {
+      font-size: 2.8rem;
+    }
+  }
+  &-right {
+    i {
+      font-size: 2.5rem;
+      padding: 0 1rem;
+      font-weight: 100;
+    }
+  }
+}

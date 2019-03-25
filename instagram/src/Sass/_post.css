@@ -1,0 +1,24 @@
+.post-container {
+  width: 80%;
+  margin: 2rem auto;
+  border: gray solid 0.5px;
+  padding: 1rem;
+}
+
+.post-thumbnail {
+  padding-left: 1rem;
+  display: flex;
+  align-content: center;
+}
+
+.post-thumbnail img {
+  border-radius: 50%;
+  width: 30px;
+}
+
+.post-thumbnail p {
+  font-size: 1rem;
+  display: inline-block;
+  padding-left: 0.5rem;
+  font-weight: 600;
+}
