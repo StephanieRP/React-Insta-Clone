@@ -1,13 +1,17 @@
 .post-container {
-  width: 80%;
-  margin: 2rem auto;
-  border: gray solid 0.5px;
-  padding: 1rem;
+  //   width: 80%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
 }
 
 .post {
+  border: gray solid 0.5px;
+  padding-top: 1rem;
+  width: 50%;
   &-thumbnail {
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
     display: flex;
     // justify-content: center;
     align-content: center;
@@ -19,7 +23,41 @@
       font-size: 1rem;
       display: inline-block;
       padding-left: 0.5rem;
+      padding-top: 0.4rem;
       font-weight: 600;
     }
   }
+
+  &-picture {
+    img {
+      width: 100%;
+    }
+  }
+
+  &-icons {
+    i {
+      font-size: 1.3rem;
+      padding: 0.2rem 0.4rem;
+    }
+  }
+
+  &-likes {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+
+  &-comments {
+    font-size: 1rem;
+    padding: 0.3rem;
+    p {
+      padding-bottom: 0.5rem;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.add-comment {
+  padding: 0.7rem;
 }

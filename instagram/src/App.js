@@ -11,6 +11,7 @@ class App extends Component {
       users: dummyData
     };
   }
+
   render() {
     return (
       <div className="main-container">
