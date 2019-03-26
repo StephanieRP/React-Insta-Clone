@@ -151,14 +151,32 @@ body {
 .header-left i {
   font-size: 3rem;
   padding-right: 1rem;
-  font-weight: 300;
+}
+.header-left i::after {
+  content: "";
+  top: 15px;
+  left: 60px;
+  width: 1px;
+  position: absolute;
+  height: 38px;
+  background: black;
 }
 .header-left h1 {
   font-size: 2.8rem;
 }
+.header .search-bar i {
+  position: absolute;
+  top: 23px;
+  left: 700px;
+  cursor: pointer;
+  color: #e6e6e6;
+}
 .header .search-bar input {
-  width: 70%;
   padding: 0.5rem;
+  text-align: center;
+  outline: none;
+  border: 0.5px solid #e6e6e6;
+  cursor: pointer;
 }
 .header-right i {
   font-size: 2.5rem;
@@ -221,13 +239,17 @@ body {
   font-weight: 300;
 }
 
-.add-comment {
+form .add-comment {
   padding: 0.7rem;
   outline: none;
-  width: 90%;
+  width: 92%;
   margin: 0;
   border: none;
   border-top: #e6e6e6 solid 0.5px;
+  cursor: pointer;
+}
+form i {
+  font-weight: 100;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -3,33 +3,41 @@ import dummyData from "./dummy-data";
 import "./index.css";
 import Header from "./components/header";
 import PostContainer from "./components/postContainer";
+import Loader from "react-loader-spinner";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       users: [],
-      comment: ""
+      liked: false
     };
   }
 
   componentDidMount() {
-    this.setState({
-      users: dummyData
-    });
+    setTimeout(() => {
+      this.setState({
+        users: dummyData
+      });
+    }, 2000);
   }
 
-  addNewComment = (index, newComment) => {
-    const commentCopy = this.state.users
-      .slice()
-      .filter(user => user.index === index);
-    commentCopy.push(newComment);
+  likePost = like => {};
+
+  //not working yet
+  addNewComment = comment => {
+    const commentCopy = this.state.users.slice();
+
+    commentCopy.push(comment);
     this.setState({
-      users: newComment
+      users: commentCopy
     });
   };
 
   render() {
+    if (this.state.users.length === 0) {
+      return <Loader type="Triangle" color="blue" height="100" width="100" />;
+    }
     return (
       <div className="main-container">
         <Header />
