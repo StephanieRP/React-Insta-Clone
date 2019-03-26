@@ -8,17 +8,24 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      users: dummyData
+      users: [],
+      comment: ""
     };
   }
 
-  addNewComment = () => {
-    const newComment = {
-      comments: this.state.comments
-    };
+  componentDidMount() {
     this.setState({
-      users: [...this.state.users, newComment],
-      comments: ""
+      users: dummyData
+    });
+  }
+
+  addNewComment = (index, newComment) => {
+    const commentCopy = this.state.users
+      .slice()
+      .filter(user => user.index === index);
+    commentCopy.push(newComment);
+    this.setState({
+      users: newComment
     });
   };
 

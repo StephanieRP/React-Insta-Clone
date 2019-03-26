@@ -19,7 +19,7 @@ const Post = props => {
           <img src={props.user.imageUrl} alt="posts" />
           <div className="post-icons">
             <i className="far fa-heart" />
-            <i class="far fa-comment" />
+            <i className="far fa-comment" />
           </div>
           <div className="post-likes">
             <p>{props.user.likes} likes</p>
