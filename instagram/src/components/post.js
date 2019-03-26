@@ -4,11 +4,8 @@ import "../index.css";
 import moment from "moment";
 import CommentInput from "./commentInput";
 
-let newTime = moment()
-  .startOf("hour")
-  .fromNow();
-
 const Post = props => {
+  console.log(props);
   return (
     <div className="post-container">
       <div className="post">
@@ -29,8 +26,13 @@ const Post = props => {
           </div>
           <div className="post-comments">
             <Comment users={props.user} />
-            <p>{newTime}</p>
-            <CommentInput />
+            <p className="time">
+              {moment(
+                props.user.timestamp,
+                "MMMM Do YYYY, h:mm:ss a"
+              ).fromNow()}
+            </p>
+            <CommentInput addNewComment={props.addNewComment} />
           </div>
         </div>
       </div>

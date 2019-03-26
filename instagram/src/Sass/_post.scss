@@ -6,7 +6,7 @@
 }
 
 .post {
-  border: gray solid 0.5px;
+  border: $border solid 0.5px;
   padding-top: 1rem;
   width: 50%;
   &-thumbnail {
@@ -55,9 +55,11 @@
         font-weight: 600;
       }
     }
-  }
-}
 
-.add-comment {
-  padding: 0.7rem;
+    .time {
+      padding-top: 0.5rem;
+      color: $comment;
+      font-weight: 300;
+    }
+  }
 }

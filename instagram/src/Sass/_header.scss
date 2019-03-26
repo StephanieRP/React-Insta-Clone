@@ -2,15 +2,23 @@
   display: flex;
   justify-content: space-between;
   padding: 0.7rem;
-  border-bottom: gray solid 0.7px;
+  border-bottom: $border solid 0.5px;
   &-left {
     display: flex;
     i {
       font-size: 3rem;
       padding-right: 1rem;
+      font-weight: 300;
     }
     h1 {
       font-size: 2.8rem;
+    }
+  }
+
+  .search-bar {
+    input {
+      width: 70%;
+      padding: 0.5rem;
     }
   }
   &-right {
