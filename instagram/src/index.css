@@ -239,6 +239,10 @@ body {
   font-weight: 300;
 }
 
+.colorRed {
+  color: red;
+}
+
 form .add-comment {
   padding: 0.7rem;
   outline: none;
