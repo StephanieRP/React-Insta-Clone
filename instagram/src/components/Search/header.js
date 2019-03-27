@@ -8,6 +8,7 @@ const Header = () => {
         <h1>Instagram</h1>
       </div>
       <div className="search-bar">
+        <i className="fas fa-search" />
         <input type="text" placeholder="Search" />
       </div>
       <div className="header-right">

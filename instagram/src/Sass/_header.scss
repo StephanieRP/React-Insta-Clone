@@ -8,7 +8,16 @@
     i {
       font-size: 3rem;
       padding-right: 1rem;
-      font-weight: 300;
+
+      &::after {
+        content: "";
+        top: 15px;
+        left: 60px;
+        width: 1px;
+        position: absolute;
+        height: 38px;
+        background: black;
+      }
     }
     h1 {
       font-size: 2.8rem;
@@ -16,9 +25,20 @@
   }
 
   .search-bar {
+    i {
+      position: absolute;
+      top: 23px;
+      left: 700px;
+      cursor: pointer;
+      color: $border;
+    }
     input {
-      width: 70%;
+      // width: 70%;
       padding: 0.5rem;
+      text-align: center;
+      outline: none;
+      border: 0.5px solid $border;
+      cursor: pointer;
     }
   }
   &-right {

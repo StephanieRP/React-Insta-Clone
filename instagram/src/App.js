@@ -1,32 +1,44 @@
 import React, { Component } from "react";
 import dummyData from "./dummy-data";
 import "./index.css";
-import Header from "./components/header";
-import PostContainer from "./components/postContainer";
+import Header from "./components/Search/header";
+import PostContainer from "./components/Post/postContainer";
+import Loader from "react-loader-spinner";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      users: dummyData
+      users: []
     };
   }
 
-  addNewComment = () => {
-    const newComment = {
-      comments: this.state.comments
-    };
-    this.setState({
-      users: [...this.state.users, newComment],
-      comments: ""
-    });
-  };
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        users: dummyData
+      });
+    }, 2000);
+  }
+
+  //not working yet
+  // addNewComment = (id, comment) => {
+  //   const newComment = this.state.users.slice().filter(user => user.id === id);
+  //   newComment.comments.push(comment);
+  //   this.setState({
+  //     users: newComment
+  //   });
+  // };
 
   render() {
+    if (this.state.users.length === 0) {
+      return <Loader type="Triangle" color="blue" height="100" width="100" />;
+    }
+
     return (
       <div className="main-container">
         <Header />
-        <PostContainer users={this.state} addNewComment={this.addNewComment} />
+        <PostContainer users={this.state} />
       </div>
     );
   }

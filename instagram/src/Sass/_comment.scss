@@ -1,8 +1,14 @@
-.add-comment {
-  padding: 0.7rem;
-  outline: none;
-  width: 90%;
-  margin: 0;
-  border: none;
-  border-top: $border solid 0.5px;
+form {
+  .add-comment {
+    padding: 0.7rem;
+    outline: none;
+    width: 92%;
+    margin: 0;
+    border: none;
+    border-top: $border solid 0.5px;
+    cursor: pointer;
+  }
+  i {
+    font-weight: 100;
+  }
 }
