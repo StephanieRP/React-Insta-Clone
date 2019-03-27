@@ -139,6 +139,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.loader {
+  width: 10%;
+  margin: 20rem auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
