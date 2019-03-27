@@ -1,32 +1,47 @@
 import React from "react ";
 
-class Login extends React.Components {
-  state = {
-    user: "",
-    password: "",
-    login: false
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: "",
+      password: ""
+    };
+  }
+
+
+  inputHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
-  loginHandler = () => {
-    if (!this.state.login) {
-      localStorage.setItem("login", true);
-    } else {
-      localStorage.removeItem("login");
+  loginCheck = event => {
+    event.preventDefault();
+    let logIn = this.state.user;
+    localStorage.setItem('logIn', login)
     }
-    this.setState({ login: !this.state.login });
-  };
+
 
   render() {
+
     return (
       <div className="login-container">
-        <form>
+        <form onSubmit={this.loginCheck}>
+          <p>Logo </p>
           <h1> Login </h1>
-          <input type="text" placeholder="Username" />
-          <input type="text" placeholder="Password" />
+          <input type="text" placeholder="Username" value={this.state.user} />
+          <input
+            type="text"
+            placeholder="Password"
+            value={this.state.password}
+          />
           <button> Login</button>
         </form>
       </div>
     );
-  }
-}
+};
+
+  
+
 export default Login;
