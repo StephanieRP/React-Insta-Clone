@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Comment from "./comment";
 import moment from "moment";
+import styled from "styled-components";
 
 export default class CommentSection extends Component {
   constructor(props) {
