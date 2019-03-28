@@ -25,7 +25,7 @@ export default class CommentSection extends Component {
     event.preventDefault();
     const newComment = {
       id: Date.now(),
-      username: "new user",
+      username: localStorage.getItem("user"),
       text: this.state.input
     };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Login extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class Login extends React.Component {
               name="user"
               value={this.state.user}
               onChange={this.inputHandler}
+              required
             />
             <input
               placeholder="Password"
@@ -44,6 +46,7 @@ class Login extends React.Component {
               name="password"
               value={this.state.password}
               onChange={this.inputHandler}
+              required
             />
             <button onClick={this.loginCheck}> Login</button>
           </div>
