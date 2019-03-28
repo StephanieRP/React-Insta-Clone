@@ -9,7 +9,8 @@ class PostPage extends Component {
   constructor() {
     super();
     this.state = {
-      users: []
+      users: [],
+      filteredPosts: []
     };
   }
 
@@ -26,6 +27,15 @@ class PostPage extends Component {
     window.location.reload();
   };
 
+  filterPost = posts => {
+    const post = this.state.users.filter(p => {
+      if (p.username.includes(posts.target.value)) {
+        return p;
+      }
+    });
+    this.setState({ filteredPosts: post });
+  };
+
   render() {
     if (this.state.users.length === 0) {
       return (
@@ -37,8 +47,20 @@ class PostPage extends Component {
 
     return (
       <div className="main-container">
-        <Header logOut={this.logOut} />
-        <PostContainer users={this.state} />
+        <Header
+          logOut={this.logOut}
+          filterPost={this.filterPost}
+          filteredPost={this.state.filteredPosts}
+        />
+        <PostContainer
+          users={this.state}
+          // posts={this.state.filteredPosts}
+          posts={
+            this.state.filteredPosts.length > 0
+              ? this.state.filteredPosts
+              : this.state.users
+          }
+        />
       </div>
     );
   }

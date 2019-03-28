@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export default class Post extends React.Component {
   constructor(props) {
-    // console.log("constructor", props);
+    console.log("constructor", props);
 
     super(props);
     this.state = {

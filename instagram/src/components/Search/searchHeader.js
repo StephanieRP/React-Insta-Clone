@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = props => {
-  // console.log("Search", props);
+  console.log("Search", props);
   return (
     <div className="header">
       <div className="header-left">
@@ -10,7 +10,7 @@ const Header = props => {
       </div>
       <div className="search-bar">
         <i className="fas fa-search" />
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" onChange={props.filterPost} />
       </div>
       <div className="header-right">
         <button className="logout-btn" onClick={props.logOut}>
