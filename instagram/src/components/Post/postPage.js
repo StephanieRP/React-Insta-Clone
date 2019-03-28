@@ -21,6 +21,11 @@ class PostPage extends Component {
     }, 2000);
   }
 
+  logOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   render() {
     if (this.state.users.length === 0) {
       return (
@@ -32,7 +37,7 @@ class PostPage extends Component {
 
     return (
       <div className="main-container">
-        <Header />
+        <Header logOut={this.logOut} />
         <PostContainer users={this.state} />
       </div>
     );

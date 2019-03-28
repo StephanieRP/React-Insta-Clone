@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import PostPage from "./components/Post/postPage";
+import App from "./App";
 
-ReactDOM.render(<PostPage />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

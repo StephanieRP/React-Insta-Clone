@@ -1,0 +1,23 @@
+.login-container {
+  width: 50%;
+  margin: 10rem auto;
+  background: $border;
+  padding: 5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.login-input {
+  display: block;
+  input {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.6rem;
+  }
+  button {
+    outline: none;
+    background: $comment;
+    padding: 0.5rem 1rem;
+    width: 40%;
+  }
+}

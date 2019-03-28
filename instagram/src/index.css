@@ -144,6 +144,30 @@ body {
   margin: 20rem auto;
 }
 
+.login-container {
+  width: 50%;
+  margin: 10rem auto;
+  background: #e6e6e6;
+  padding: 5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.login-input {
+  display: block;
+}
+.login-input input {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.6rem;
+}
+.login-input button {
+  outline: none;
+  background: #a09999;
+  padding: 0.5rem 1rem;
+  width: 40%;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

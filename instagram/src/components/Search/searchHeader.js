@@ -1,6 +1,7 @@
 import React from "react";
 
-const Header = () => {
+const Header = props => {
+  // console.log("Search", props);
   return (
     <div className="header">
       <div className="header-left">
@@ -12,6 +13,9 @@ const Header = () => {
         <input type="text" placeholder="Search" />
       </div>
       <div className="header-right">
+        <button className="logout-btn" onClick={props.logOut}>
+          Log Out
+        </button>
         <i className="far fa-compass" />
         <i className="far fa-heart" />
         <i className="far fa-user" />
