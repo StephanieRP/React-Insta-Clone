@@ -22,7 +22,6 @@ const Input = styled.input`
 `;
 
 const Header = props => {
-  console.log("Search", props);
   return (
     <HeaderWrapper>
       <HeaderLeft>
@@ -45,10 +44,14 @@ const Header = props => {
         />
         <Input type="text" placeholder="Search" onChange={props.filterPost} />
       </div>
-      <div className="header-right">
+      <div>
+        <p style={{ fontSize: "1rem" }}>
+          Welcome: {localStorage.getItem("user")}
+        </p>
         <Button color="primary" onClick={props.logOut}>
           Log Out
         </Button>
+
         <i
           className="far fa-compass"
           style={{ fontSize: "1.5rem", padding: "0 .5rem", fontWeight: "100" }}

@@ -4,6 +4,21 @@ import Comment from "./comment";
 import moment from "moment";
 import styled from "styled-components";
 
+const Time = styled.p`
+  padding-top: 0.5rem;
+  color: #a09999;
+  font-weight: 300;
+`;
+
+const CommentInput = styled.input`
+  padding: 0.7rem;
+  outline: none;
+  width: 97%;
+  margin: 0;
+  border: none;
+  border-top: #e6e6e6 solid 0.5px;
+  cursor: pointer;
+`;
 export default class CommentSection extends Component {
   constructor(props) {
     super(props);
@@ -40,11 +55,11 @@ export default class CommentSection extends Component {
     return (
       <div>
         <Comment username={this.state} />
-        <p className="time">
+        <Time>
           {moment(this.state.time, "MMMM Do YYYY, h:mm:ss a").fromNow()}
-        </p>
+        </Time>
         <form onSubmit={this.addNewComment}>
-          <input
+          <CommentInput
             type="text"
             placeholder="Add a comment"
             className="add-comment"

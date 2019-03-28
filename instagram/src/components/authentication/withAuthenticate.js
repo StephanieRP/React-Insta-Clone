@@ -17,7 +17,6 @@ const withAuthenticate = Login => PostPage =>
     }
 
     render() {
-      console.log("Login", this.state.login);
       return this.state.login === false ? (
         <Login login={this.state.login} />
       ) : (

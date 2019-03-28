@@ -36,8 +36,6 @@ const PostUsername = styled.p`
 `;
 export default class Post extends React.Component {
   constructor(props) {
-    console.log("constructor", props);
-
     super(props);
     this.state = {
       likes: props.user.likes

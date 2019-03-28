@@ -4,6 +4,12 @@ import "../../index.css";
 import Header from "../Search/searchHeader";
 import PostContainer from "./postContainer";
 import Loader from "react-loader-spinner";
+import styled from "styled-components";
+
+const LoaderCircle = styled.div`
+  width: 10%;
+  margin: 20rem auto;
+`;
 
 class PostPage extends Component {
   constructor() {
@@ -39,9 +45,9 @@ class PostPage extends Component {
   render() {
     if (this.state.users.length === 0) {
       return (
-        <div className="loader">
-          <Loader type="Rings" color="blue" height="100" width="100" />;
-        </div>
+        <LoaderCircle className="loader">
+          <Loader type="Rings" color="blue" height="100" width="100" />
+        </LoaderCircle>
       );
     }
 
