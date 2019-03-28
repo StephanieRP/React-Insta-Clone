@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const PostContainer = props => {
   console.log("PropsContainer", props);
-  return props.users.users.map(user => (
+  return props.posts.map(user => (
     <Post key={user.id} user={user} likes={user.likes} />
   ));
 };

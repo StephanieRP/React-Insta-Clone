@@ -1,6 +1,7 @@
 import React from "react";
 
-const Header = () => {
+const Header = props => {
+  console.log("Search", props);
   return (
     <div className="header">
       <div className="header-left">
@@ -9,9 +10,12 @@ const Header = () => {
       </div>
       <div className="search-bar">
         <i className="fas fa-search" />
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" onChange={props.filterPost} />
       </div>
       <div className="header-right">
+        <button className="logout-btn" onClick={props.logOut}>
+          Log Out
+        </button>
         <i className="far fa-compass" />
         <i className="far fa-heart" />
         <i className="far fa-user" />
