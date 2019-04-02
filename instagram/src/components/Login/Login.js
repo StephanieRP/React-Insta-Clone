@@ -1,11 +1,28 @@
 import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Button } from "reactstrap";
+
+const LoginContainer = styled.div`
+  width: 50%;
+  margin: 10rem auto;
+  background: #e6e6e6;
+  padding: 5rem;
+  font-size: 2rem;
+  text-align: center;
+`;
+
+const LoginInput = styled.input`
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.6rem;
+`;
 
 class Login extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
-      user: "",
+      user: localStorage.getItem("user"),
       password: ""
     };
   }
@@ -26,29 +43,36 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-container">
+      <LoginContainer>
         <form>
-          <img src="../../../img/Instagram_logo.png" alt="logo" />
-          <h1> Login </h1>
+          <h1 style={{ fontSize: "2.5rem", letterSpacing: 2 }}> Instagram </h1>
           <div className="login-input">
-            <input
+            <LoginInput
               placeholder="Username"
               type="text"
               name="user"
               value={this.state.user}
               onChange={this.inputHandler}
+              required
             />
-            <input
+            <LoginInput
               placeholder="Password"
               type="password"
               name="password"
               value={this.state.password}
               onChange={this.inputHandler}
+              required
             />
-            <button onClick={this.loginCheck}> Login</button>
+            <Button
+              color="primary"
+              onClick={this.loginCheck}
+              style={{ fontSize: "1.5rem" }}
+            >
+              Log In
+            </Button>
           </div>
         </form>
-      </div>
+      </LoginContainer>
     );
   }
 }

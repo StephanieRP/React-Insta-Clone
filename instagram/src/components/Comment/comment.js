@@ -7,7 +7,8 @@ const Comment = props => {
 
   return props.username.comments.map(comment => (
     <p key={comment.id} className="new-comment">
-      <span>{comment.username}</span> {comment.text}
+      <span style={{ fontWeight: "600" }}>{comment.username}</span>{" "}
+      {comment.text}
     </p>
   ));
 };

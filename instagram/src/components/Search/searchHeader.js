@@ -1,26 +1,71 @@
 import React from "react";
+import styled from "styled-components";
+import { Button } from "reactstrap";
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+  border-bottom: #e6e6e6 solid 0.5px;
+`;
+
+const HeaderLeft = styled.div`
+  display: flex;
+`;
+
+const Input = styled.input`
+  padding: 0.5rem;
+  text-align: center;
+  outline: none;
+  border: 0.5px solid #e6e6e6;
+  cursor: pointer;
+`;
 
 const Header = props => {
-  console.log("Search", props);
   return (
-    <div className="header">
-      <div className="header-left">
-        <i className="fab fa-instagram" />
-        <h1>Instagram</h1>
+    <HeaderWrapper>
+      <HeaderLeft>
+        <i
+          className="fab fa-instagram"
+          style={{ fontSize: "3rem", paddingRight: "1rem" }}
+        />
+        <h1 style={{ fontSize: "2.8rem" }}>Instagram</h1>
+      </HeaderLeft>
+      <div>
+        <i
+          className="fas fa-search"
+          style={{
+            position: "absolute",
+            top: 23,
+            left: 700,
+            curser: "pointer",
+            color: "#e6e6e6"
+          }}
+        />
+        <Input type="text" placeholder="Search" onChange={props.filterPost} />
       </div>
-      <div className="search-bar">
-        <i className="fas fa-search" />
-        <input type="text" placeholder="Search" onChange={props.filterPost} />
-      </div>
-      <div className="header-right">
-        <button className="logout-btn" onClick={props.logOut}>
+      <div>
+        <p style={{ fontSize: "1rem" }}>
+          Welcome: {localStorage.getItem("user")}
+        </p>
+        <Button color="primary" onClick={props.logOut}>
           Log Out
-        </button>
-        <i className="far fa-compass" />
-        <i className="far fa-heart" />
-        <i className="far fa-user" />
+        </Button>
+
+        <i
+          className="far fa-compass"
+          style={{ fontSize: "1.5rem", padding: "0 .5rem", fontWeight: "100" }}
+        />
+        <i
+          className="far fa-heart"
+          style={{ fontSize: "1.5rem", padding: "0 .5rem", fontWeight: "100" }}
+        />
+        <i
+          className="far fa-user"
+          style={{ fontSize: "1.5rem", padding: "0 .5rem", fontWeight: "100" }}
+        />
       </div>
-    </div>
+    </HeaderWrapper>
   );
 };
 

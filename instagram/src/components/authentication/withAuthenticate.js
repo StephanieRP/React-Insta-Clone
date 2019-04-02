@@ -1,6 +1,6 @@
 import React from "react";
 
-const withAuthenticate = First => Second =>
+const withAuthenticate = Login => PostPage =>
   class extends React.Component {
     constructor() {
       super();
@@ -17,11 +17,10 @@ const withAuthenticate = First => Second =>
     }
 
     render() {
-      console.log("Login", this.state.login);
       return this.state.login === false ? (
-        <First login={this.state.login} />
+        <Login login={this.state.login} />
       ) : (
-        <Second />
+        <PostPage />
       );
     }
   };
